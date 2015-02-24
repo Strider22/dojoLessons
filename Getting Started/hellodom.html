@@ -1,0 +1,25 @@
+<html><body>
+<!--Simple dojo file Showing basic dom manipulation.-->
+<!-- from http://dojotoolkit.org/documentation/tutorials/1.9/hello_dojo/ -->
+<!--See also http://dojotoolkit.org/documentation/tutorials/1.10/dom_functions/-->
+
+  <!-- load the dojo library asynchronously -->
+  <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"
+       data-dojo-config="async: true"></script>
+
+  <!-- establish a DOM node-->
+  <h1 id="greeting">Hello</h1>
+
+
+  <!-- use dojo to find a node and place more text in the node -->
+  <script> require([
+      'dojo/dom',
+      'dojo/dom-construct',
+      'dojo/domReady!'
+          ], function(dom,domConstruct){
+      var greetingNode = dom.byId('greeting');
+      domConstruct.place('<i> Dom!</i>', greetingNode);
+  });
+  </script>
+
+</body></html>

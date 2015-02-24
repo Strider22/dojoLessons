@@ -1,0 +1,35 @@
+<!--Programmatic creation of a button.-->
+<!--http://dojotoolkit.org/reference-guide/1.10/dijit/form/Button.html-->
+
+<html>
+<head>
+    <!--Basic Dojo boilerplate-->
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"
+          data-dojo-config="async: true"></script>
+</head>
+
+<body class="claro">
+    <button id="btn"></button>
+    <p id="buttonAction">My button </p>
+
+    <script>
+        require([
+            'dijit/form/Button',
+            'dojo/dom',
+            'dojo/domReady!'], function(Button, dom){
+            var myButton = new Button({
+                label: "myButton",
+                onClick: function(){
+                    dom.byId("buttonAction").innerHTML += " has been clicked.";
+                }
+            }, "btn").startup();
+        });
+
+    </script>
+
+    <script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!--http://livedocs.dojotoolkit.org/dijit/Dialog-->
+
+<html>
+<head>
+    <!--Basic Dojo boilerplate-->
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"
+          data-dojo-config="async: true"></script>
+
+    <!--CSS stuff-->
+    <style >
+        .terms{
+            overflow-y:scroll;
+            border:1px solid #769dc4;
+            padding:0 10px;
+            height:160px;
+            width:600px;
+        }
+    </style>
+
+</head>
+
+<body class="claro">
+    <button id="btn">myButton</button>
+
+    <!--Terms and Conditions Dialog-->
+    <div class="dijitHidden">
+        <div id="dlg">
+            <p><strong>Please agree to the following terms and conditions:</strong></p>
+            <div class="terms" ><p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed suscipit massa.
+                Aenean vel turpis tincidunt velit gravida venenatis. In iaculis urna non quam
+                tincidunt elementum. Nunc pellentesque aliquam dui, ac facilisis massa sollicitudin et.
+                Donec tincidunt vulputate ultrices. Duis eu risus ut ipsum auctor scelerisque non quis ante.
+                Nam tempor lobortis justo, et rhoncus mauris cursus et. Mauris auctor congue lectus auctor
+                ultrices. Aenean quis feugiat purus. Cras ornare vehicula tempus. Nunc placerat, lorem
+                adipiscing condimentum sagittis, augue velit ornare odio, eget semper risus est et erat....
+            </p></div>
+
+            <button onclick="hideDialog();">I Agree</button>
+            <button onclick="alert('You must agree!');">I Don't Agree</button>
+
+        </div>
+    </div>
+
+
+    <script>
+        require([
+                'dijit/registry',
+                'dijit/form/Button',
+                'dijit/Dialog',
+                'dojo/domReady!'], function(registry, Button, Dialog){
+
+            showDialog = function(){
+                registry.byId("dlg").show();
+            }
+            hideDialog = function(){
+                registry.byId("dlg").hide();
+            }
+
+            var myButton = new Button({
+                label: "myButton",
+                onClick: showDialog
+            }, "btn").startup();
+
+            var myDialog = new Dialog({
+                title: "Terms and Conditions"
+            },"dlg");
+
+        });
+
+    </script>
+
+
+</body>
+</html>

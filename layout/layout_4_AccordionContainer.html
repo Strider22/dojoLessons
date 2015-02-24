@@ -1,0 +1,48 @@
+<!--Dojo Border container -->
+<!--from http://dojotoolkit.org/reference-guide/1.10/dijit/layout.html -->
+<html>
+    <head>
+        <!--Basic Dojo boilerplate-->
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="parseOnLoad: true">
+        </script>
+
+
+
+        <!--CSS stuff-->
+        <style >
+          .outerContainer{
+              width: 100%;
+              height: 100%;
+          }
+        </style>
+        <script>
+            require(["dojo/parser", "dijit/layout/AccordionContainer",
+                "dijit/layout/AccordionPane"]);
+        </script>
+    </head>
+
+
+    <body class="claro">
+        <div class="outerContainer"
+             data-dojo-type="dijit/layout/AccordionContainer" >
+            <div data-dojo-type="dijit/layout/AccordionPane"
+                    title="Pane 1">
+                Accordion 1
+            </div>
+            <div data-dojo-type="dijit/layout/AccordionPane"
+                    title="Pane 2">
+                Accordion 2
+            </div>
+            <div data-dojo-type="dijit/layout/AccordionPane"
+                    title="Pane 3">
+                Accordion 3
+            </div>
+            <div data-dojo-type="dijit/layout/AccordionPane"
+                    title="Pane 4">
+                Accordion 4
+            </div>
+        </div>
+    </body>
+</html>

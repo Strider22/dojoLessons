@@ -1,0 +1,38 @@
+<html>
+<head>
+    <!--Basic Dojo boilerplate-->
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"
+          data-dojo-config="async: true"></script>
+</head>
+
+<body class="claro">
+    <!--default position enumerates prioritized desired position of tooltip. -->
+    <button id="btn" onmouseover="dijit.Tooltip.defaultPosition=['above','after']">myButton</button>
+    <p id="buttonAction">My button</p>
+
+    <script>
+        require([
+            'dijit/form/Button',
+            'dijit/Tooltip',
+            'dojo/dom',
+            'dojo/domReady!'], function(Button, Tooltip, dom){
+            var myButton = new Button({
+                label: "myButton",
+                showDelay: 250,
+                onClick: function(){
+                    dom.byId("buttonAction").innerHTML += " has been clicked.";
+                }
+            }, "btn").startup();
+            new Tooltip({
+                connectId:["btn"],
+                label: "<strong>Click</strong> for action"
+            });
+        });
+
+    </script>
+
+
+</body>
+</html>

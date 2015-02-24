@@ -1,0 +1,48 @@
+<html><body>
+ <!--See Also "functional"-->
+<!--Using dojox/lang/functiona.-->
+<!--http://dojotoolkit.org/api/-->
+<!--http://www.lazutkin.com/blog/2008/01/12/functional-fun-javascript-dojo/-->
+
+
+  <!-- load the dojo library asynchronously -->
+  <script src="src/dojo/dojo.js"
+       data-dojo-config="async: true"></script>
+
+
+
+
+
+
+
+<!--forIn is part of dojox. It allows you to iterate over object attributes-->
+
+
+
+  <script> require([
+          'dojox/lang/functional',
+          'dojo/domReady!'
+          ], function(functional){
+
+
+
+      /************************************************************
+       *
+       *                Iterating over object attributes
+       *
+       ************************************************************/
+      var myObject= {
+          name: "Bob",
+          age: "25",
+          what: {},
+          hello: {a:"a", b: "b"}
+      };
+
+      functional.forIn(myObject,function(value,key){
+          document.write(key  + ": " + value + "<br>");
+      });
+
+  });
+  </script>
+
+</body></html>

@@ -1,0 +1,66 @@
+<html><body>
+<!--Using dojox/lang/functiona.-->
+<!--http://dojotoolkit.org/api/-->
+<!--http://www.lazutkin.com/blog/2008/01/12/functional-fun-javascript-dojo/-->
+
+
+  <!-- load the dojo library asynchronously -->
+  <script src="src/dojo/dojo.js"
+       data-dojo-config="async: true"></script>
+
+  <script> require([
+          'dojox/lang/functional',
+          'dojox/lang/functional/sequence',
+          'dojo/domReady!'
+          ], function(functional,sequence){
+
+
+
+      /************************************************************
+       *
+       *                Iterating over object attributes
+       *
+       ************************************************************/
+      var myObject= {
+          name: "Bob",
+          age: "25"
+      };
+
+      var printItem = function(item){
+          document.write(item + "<br>");
+      };
+
+      var dumpArray = function(array){
+          array.forEach(function(item){
+              printItem(item);
+          });
+      };
+
+      printItem("<br>forIn ");
+      functional.forIn(myObject,function(value,key){
+          document.write(key  + ": " + value + "<br>");
+      });
+
+
+      printItem("<br>keys ");
+      dumpArray(functional.keys(myObject));
+
+      printItem("<br>values ");
+      dumpArray(functional.values(myObject));
+
+
+      /************************************************************
+       *
+       *                Cool functional operations
+       *
+       ************************************************************/
+      printItem("<br>until (count by 2)");
+      dumpArray(sequence.until(">20","2+", 2));
+
+      printItem("<br>repeat (count 5 times)");
+      dumpArray(sequence.repeat(5,"1+", 1));
+
+  });
+  </script>
+
+</body></html>

@@ -1,0 +1,52 @@
+<!--Basic layout of HTML working toward Dojo layout-->
+<!--from http://dojotoolkit.org/reference-guide/1.10/dijit/layout.html -->
+<html>
+    <head>
+        <!--Basic Dojo boilerplate-->
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
+        <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js" data-dojo-config="parseOnLoad: true">
+        </script>
+
+
+
+        <!--CSS stuff-->
+        <style>
+          .outerContainer{
+              border: 1px solid blue;
+          }
+          .innerPanel{
+              margin: 5px;
+              border: 1px solid green;
+          }
+        </style>
+    </head>
+
+
+    <!--Make the browser window small and you'll see that a scroll bar is automatically put in. -->
+
+    <body class="claro">
+        <div class="outerContainer">
+            <div class="innerPanel">
+                <h4>Left Panel content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="innerPanel">
+                <h4>Right Panel content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

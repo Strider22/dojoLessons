@@ -1,0 +1,41 @@
+<html>
+<head>
+    <!--Basic Dojo boilerplate-->
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dijit/themes/claro/claro.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.9.2/dojo/dojo.js"
+          data-dojo-config="async: true"></script>
+    <script>
+        require([
+                'dojo/parser',
+                'dijit/form/Button',
+                'dojo/domReady!'], function(parser){parser.parse();});
+    </script>
+</head>
+
+<body class="claro">
+    <!--default position enumerates prioritized desired position of tooltip. -->
+    <button id="btn" onmouseover="dijit.Tooltip.defaultPosition=['above','after']"
+            data-dojo-type="dijit/form/Button"
+            type="button">myButton
+        <div class="dijitHidden">
+            <span data-dojo-type="dijit/Tooltip"
+                  data-dojo-props="connectId:'btn'">
+                <strong>Click</strong> for action
+            </span>
+        </div>
+      <script type="dojo/on" data-dojo-event="click"
+              data-dojo-args="evt">
+        require(["dojo/dom"], function(dom){
+            dom.byId("buttonAction").innerHTML += " has been clicked.";
+        });
+
+      </script>
+    </button>
+    <p id="buttonAction">My button</p>
+
+
+    <script>
+    </script>
+</body>
+</html>
